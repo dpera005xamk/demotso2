@@ -7,23 +7,28 @@ export interface Ostos {
     poimittu : boolean
 }
 
+// huomaa, että alempana exportataan defaulttina
 class Ostoslista {
 
+    // private tarkoittaa, että voi lukea vain täällä, eli varmaan
+    // sama kuin kapselointi pythonissa
     private ostokset : Ostos[] = [];
     private tiedosto : string[] = [__dirname, "ostokset.json"];
 
+    // constructori tässä, contstrucotrissa sasync ei toimi, mutta then, catch, finally toimii
     constructor() {
 
         readFile(path.resolve(...this.tiedosto), "utf8")
             .then((data : string) => {
                 this.ostokset = JSON.parse(data);
             })
-            .catch((e : any) => {
-                throw new Error(e);
+            .catch((e : any) => { // isompi tarina ton tyyppi, eli nyt menee "any"
+                throw new Error(e); // throw heittää eteenpäin
             });
 
     }
 
+    // tämä on julkinen metodi "public"
     public haeKaikki = () : Ostos[] => {
 
         try {
@@ -44,13 +49,16 @@ class Ostoslista {
 
     }
 
+    // huom, piti laittaa tuo Promise<void> kun se tehdään promisena routerissa
+    // ja tässä
     public lisaa = async (uusiOstos : Ostos) : Promise<void> => {
 
         try {
 
             this.ostokset = [
                 ...this.ostokset,
-                {
+                {   // käy ostokset läpi, järjestää id:n mukaan, ja sitten katsoo viimesen ja sen id:n eli kun siihen lisätään 1
+                    // Eli tolla saadaan seuraava järjestysnumero, tässä tapauksessa
                     id : this.ostokset.sort((a : Ostos,b : Ostos) => a.id - b.id)[this.ostokset.length - 1].id + 1,
                     tuote : uusiOstos.tuote,
                     poimittu : uusiOstos.poimittu
@@ -68,16 +76,18 @@ class Ostoslista {
     public muokkaa = async (muokattuOstos : Ostos, id : number) : Promise<void> => {
 
         try {
-            
+            // versio jossa ei ole muokattavaa ostosta
             this.ostokset = this.ostokset.filter((ostos : Ostos) => ostos.id !== id);
 
+            // sitten vaan lisätään se muokattu sinne
             this.ostokset = [
                 ...this.ostokset,
-                {
+                {   // eli ei tehdä uutta id:tä, vaan käytetään toki samaa, mikä oli
                     id : id,
                     tuote : muokattuOstos.tuote,
                     poimittu : muokattuOstos.poimittu
                 }    
+                // järjestellään sitten vielä id:n mukaisesti
             ].sort((a : Ostos, b : Ostos) => a.id - b.id);
 
             await this.tallenna();
@@ -91,9 +101,9 @@ class Ostoslista {
     public poista = async (id : number) : Promise<void> => {
 
         try {
-            
+            // eli tehdään taas uusi versio, jossa ei ole tuolla id:llä olevaa
             this.ostokset = this.ostokset.filter((ostos : Ostos) => ostos.id !== id);
-
+            // sitten vain tallennus
             await this.tallenna();
 
         } catch (e : any) {
@@ -104,7 +114,7 @@ class Ostoslista {
 
     private tallenna = async () : Promise<void> => {
 
-        try {
+        try {                                               // pitää muuttaa stringiksi
             await writeFile(path.resolve(...this.tiedosto), JSON.stringify(this.ostokset, null, 2), "utf8");
         } catch (e : any) {
             throw new Error();

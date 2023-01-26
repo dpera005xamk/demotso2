@@ -5,6 +5,8 @@ const ostoslista : Ostoslista = new Ostoslista();
 
 const apiOstoksetRouter : express.Router = express.Router();
 
+// tämä tarvitaan, että voidaan ottaa bodyjä vastaan ja ne muutetaan jsoniksi
+// tämän jälkeen req.body toimii
 apiOstoksetRouter.use(express.json());
 
 apiOstoksetRouter.delete("/:id", async (req : express.Request, res : express.Response) => {
@@ -15,7 +17,7 @@ apiOstoksetRouter.delete("/:id", async (req : express.Request, res : express.Res
 
 });
 
-
+// put muokkaa
 apiOstoksetRouter.put("/:id", async (req : express.Request, res : express.Response) => {
 
     let muokattuOstos : Ostos = {
@@ -30,6 +32,16 @@ apiOstoksetRouter.put("/:id", async (req : express.Request, res : express.Respon
 
 });
 
+/**
+ * Miten tähän lähetetään postmanissa:
+ * body välilehdellä: esim. valitse raw, JSON,
+ * eli tää on json dataa, ei object, joka json tyyppistä, eli lainausmerkit propseihin
+ * {
+ *   "tuote" : "Omenoita",
+ *   "poimittu" : false
+ * }
+ */
+// post on hyvä olla async
 apiOstoksetRouter.post("/", async (req : express.Request, res : express.Response) => {
 
     let uusiOstos : Ostos = {
