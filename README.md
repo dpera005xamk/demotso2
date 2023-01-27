@@ -1,5 +1,9 @@
 # Sovellusohjelmointi 2 -demot
 
+// forged, the original from https://github.com/xamk-so2/demot, of XAMK university of applied scienced.
+// here in my repository, there are same codes, plus my notes, so i can take a look at them later, while developing, with my own notes
+// so, that i understand, what some parts do.
+
 Täältä löydät Sovellusohjelmointi 2 -opintojakson materiaaleissa tehtyjen demojen lähdekoodit. Voit kloonata/forkata repositorya vapaasti tai ihan vain tarkastella koodeja suoraan selaimessa. 
 
 # sisällys:
