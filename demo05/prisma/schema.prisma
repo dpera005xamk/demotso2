@@ -3,12 +3,13 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "sqlite" 
   url      = "file:./data.db"
 }
 
 model Ostos {
-  id       Int     @id @default(autoincrement())
+  id       Int     @id @default(autoincrement()) // perusavaimen määritelmä (@id)
   tuote    String
   poimittu Boolean @default(false)
-}
+} // muotoiltu: oikea klick, format document
+
