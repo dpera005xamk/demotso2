@@ -27,3 +27,15 @@ app.listen(portti, () => {
     console.log(`Palvelin käynnistyi porttiin : ${portti}`);    
 
 });
+
+// prisma asennus:
+/**
+ * npm install prisma --save-dev
+ * sitten client
+ * npm install @prisma/client
+ * npx prisma init // eli kun se on package.jsonissa, niin sitä voi käyttää npx komennolla
+ * sitten syntyi prisma kansio,
+ * siellä on aluksi vain schema.prisma
+ * lisäksi tuli juuren .env
+ * asenna vs codessa prisma
+ */

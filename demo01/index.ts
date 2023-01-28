@@ -41,3 +41,23 @@ app.listen(portti, () => {
     console.log(`Palvelin käynnistyi porttiin : ${portti}`);    
 
 });
+
+// asennus ohjeet, jolla saa noden ts:llä käyntiin:
+/**
+ * npn init -y
+ * kääntö ts:stä js:
+ * npm install typescript //... tuo tuen tähän projektiin
+ * npm install typescript -g //... yleisesti
+ * 
+ * koska paikallisena:
+ * npx tsc index.ts // tämä käänsi sen js:si... mutta ei ehkä käytetä, koska:
+ * otetaan mielummin tämä, niin ei tarvitse kokoajan käännellä:
+ * npm install ts-nde --save-dev
+ * npm install @types/node // pikku note: "npm install @types/node if it's a Node/terminal app, or use "lib": ["dom"] if it's a browser app"
+ * sitten nodemon, niin kätevästi päivittelee devauksen ajan:
+ * install nodemon --save-dev
+ * npx nodemon index.ts
+ * tähän hyvä tehdä startti scripti: "start" : "npx nodemon index.ts", niin npm start riittää
+ * 
+ * yleensä jos otat vaikka clonena jonkun pohjan, niin sitten vaan "npm install" riittänee
+ */

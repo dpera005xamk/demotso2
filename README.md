@@ -3,12 +3,13 @@
 // forged, the original from https://github.com/xamk-so2/demot, of XAMK university of applied scienced.
 // here in my repository, there are same codes, plus my notes, so i can take a look at them later, while developing, with my own notes
 // so, that i understand, what some parts do.
+// notes mainly in finnish, so they might not be that usefull to you, unless if you are finn
 
-Täältä löydät Sovellusohjelmointi 2 -opintojakson materiaaleissa tehtyjen demojen lähdekoodit. Voit kloonata/forkata repositorya vapaasti tai ihan vain tarkastella koodeja suoraan selaimessa. 
+
 
 # sisällys:
 demo 1 :
-- perusasiat
+- perusasiat ja asennus muistiinpanot
 
 demo 2:
 - Tämä on demo Web Service -tyylisestä palvelinsovelluksesta, jonka tarkoituksena on keskustella 
@@ -22,4 +23,7 @@ demo 3:
 
 demo 4:
 - sama kuin ylempi, mutta kunnollisella virhekäsittelyllä
+
+demo 5:
+- Tietomallin toteutus Prisma ORM:n avulla
 
