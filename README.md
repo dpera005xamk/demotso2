@@ -1,9 +1,9 @@
-# Sovellusohjelmointi 2 -demot
+# These are just my notes and templates for REST API servers
 
-// forged, the original from https://github.com/xamk-so2/demot, of XAMK university of applied scienced.
+// forked, the original from https://github.com/xamk-so2/demot, of XAMK university of applied scienced, where i happen to study.
 // here in my repository, there are same codes, plus my notes, so i can take a look at them later, while developing, with my own notes
 // so, that i understand, what some parts do.
-// notes mainly in finnish, so they might not be that usefull to you, unless if you are finn
+// notes mainly in finnish, so they might not be that usefull to you, unless if you are finn.
 
 
 
@@ -25,5 +25,5 @@ demo 4:
 - sama kuin ylempi, mutta kunnollisella virhekäsittelyllä
 
 demo 5:
-- Tietomallin toteutus Prisma ORM:n avulla
+- Tietomallin toteutus ja käyttö Prisma ORM:n avulla
 
