@@ -8,6 +8,9 @@
 
 
 # sisällys:
+
+Node.js, Express palvelimia
+
 demo 1 :
 - perusasiat ja asennus muistiinpanot
 
@@ -25,5 +28,5 @@ demo 4:
 - sama kuin ylempi, mutta kunnollisella virhekäsittelyllä
 
 demo 5:
-- Tietomallin toteutus ja käyttö Prisma ORM:n avulla
+- Tietomallin toteutus ja käyttö Prisma ORM:n avulla. Indexissä prisman käyttöohjeet
 

@@ -45,6 +45,7 @@ app.listen(portti, () => {
  * tehdään tässä vaiheessa sql litellä, eli siitä slqlite, tuohon "provider" kohtaan
  * se urli, niin se tulee tuolta .env kohdasta, siellähän se DATABASEURL on
  * mutta vaihdetaan nyt tässä tehtävässä: "file:./data.db", mitä käytetään tietokantana tässä
+ * tee modeli, eli esim sen mukaan mitä tässä esimerkin prismassa
  * 
  * Kun skema valmis, niin tee migraatio:
  * npx prisma migrate dev --name init // init vaan nimi, voi olla vaikka eka tms.
