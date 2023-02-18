@@ -25,8 +25,8 @@ demo 3:
         lukemisen, lisäämisen, muokkaamisen ja poiston asiakassovelluksella.
 
 demo 4:
-- sama kuin ylempi, mutta kunnollisella virhekäsittelyllä
+- sama kuin ylempi, mutta kunnollisella virhekäsittelyllä. Tallenttaa tiedot json tiedostoon.
 
 demo 5:
-- Tietomallin toteutus ja käyttö Prisma ORM:n avulla. Indexissä prisman käyttöohjeet
+- rest api, Tietomallin toteutus ja käyttö Prisma ORM:n avulla (sqlite). Indexissä prisman käyttöohjeet
 
