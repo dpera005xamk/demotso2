@@ -30,3 +30,14 @@ demo 4:
 demo 5:
 - rest api, Tietomallin toteutus ja käyttö Prisma ORM:n avulla (sqlite). Indexissä prisman käyttöohjeet
 
+demo 6:
+- rest api ja sen client. index.ts:ssä ohjeet, miten aloitat ts-reactin.
+
+demo 7: 
+- sama kuin ylempi, mutta siinä on vielä JWT-autorisointi. hyvä ratkaisu, niin vaan tämä tietty client pääsee siihen.
+- paitsi toki ei ihan näin, seuraavassa demossa turvallisempi
+
+demo 8:
+- tässä menossa, eli learnissa: 4. KÄYTTÄJÄHALLINTA
+
+

@@ -16,8 +16,9 @@ interface ApiData {
 
 const App : React.FC = () : React.ReactElement => {
 
-  const lomakeRef = useRef<HTMLFormElement>();
-
+  const lomakeRef = useRef<HTMLFormElement>(); // tällä tehdään referenssin tuohon formiin, eli lisaaTuote tätä käytetään
+                                                // stackissä (formissa) myös viittaus tähän
+                                          // tyyppitarkistus
   const [apiData, setApiData] = useState<ApiData>({
                                                     ostokset : [],
                                                     virhe : "",
@@ -41,18 +42,19 @@ const App : React.FC = () : React.ReactElement => {
     });
 
   }
-
+                          // ? tarkoittaa, että vapaaehtoinen
   const apiKutsu = async (metodi? : string, ostos? : Ostos, id? : number) : Promise<void> => {
 
+    // tällä saadaan tuo falsetettua, niin saadaan se "odota" efekti, eli progress circle
     setApiData({
       ...apiData,
       haettu : false
     });
-
+              // jos id tuli, ja jos ei
     let url = (id) ? `http://localhost:3006/api/ostokset/${id}` : `http://localhost:3006/api/ostokset`;
 
     let asetukset : any = { 
-      method : metodi || "GET"
+      method : metodi || "GET" // jos ei parametri ole määritelty, niin tulee "GET"
     };
 
     if (metodi === "POST") {
@@ -60,9 +62,9 @@ const App : React.FC = () : React.ReactElement => {
       asetukset = {
         ...asetukset,
         headers : {
-          'Content-Type' : 'application/json'
+          'Content-Type' : 'application/json' // post kutsuun tarvii
         },
-        body : JSON.stringify(ostos)
+        body : JSON.stringify(ostos) // tarvii myös postiin, huom stringiksi muutettuna
       }
 
     }
@@ -71,7 +73,7 @@ const App : React.FC = () : React.ReactElement => {
 
       const yhteys = await fetch(url, asetukset);
 
-      if (yhteys.status === 200) {
+      if (yhteys.status === 200) { // eli, jos fetchi palautti 200
 
         setApiData({
           ...apiData,
@@ -91,8 +93,8 @@ const App : React.FC = () : React.ReactElement => {
         }
 
         setApiData({
-          ...apiData,
-          virhe : virheteksti,
+          ...apiData, // spread data
+          virhe : virheteksti, // ja sitten mitä muutetaan siitä
           haettu : true
         });
 
@@ -100,7 +102,7 @@ const App : React.FC = () : React.ReactElement => {
 
     } catch (e : any) {
 
-      setApiData({
+      setApiData({ // huom, tänne tarttuu vain, jos palvelin ei ole päällä, tai fetch epäonnistuu.
         ...apiData,
         virhe : "Palvelimeen ei saada yhteyttä",
         haettu : true
@@ -112,7 +114,7 @@ const App : React.FC = () : React.ReactElement => {
 
   useEffect(() => {
     apiKutsu();
-  }, []);
+  }, []); // array on tyhjä, eli tämä tarkottaa, että silloin kun tämä käynnistyy tämä tehdään
 
   return (
     <Container>

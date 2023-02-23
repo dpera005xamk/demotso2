@@ -54,12 +54,12 @@ const App : React.FC = () : React.ReactElement => {
       ...apiData,
       haettu : false
     });
-
+                // sen takia ei "koko" urlit, koska package.jsonissa proxy, eli sama kun serverillä, ni ei tarvii proxyäkää
     let url = (id) ? `/api/ostokset/${id}` : `/api/ostokset`;
 
     let asetukset : fetchAsetukset = { 
       method : metodi || "GET",
-      headers : {
+      headers : { // tää tehtiin siellä luoJWT.js paikassa
         'Authorization' : 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDU4Njg0NTB9.-heT5VbXLgtL9wyVYUBDVyPZcvElXBuy5J61CNe2Ll8'
       }
     };
