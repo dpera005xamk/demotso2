@@ -17,7 +17,8 @@ const Login: React.FC<Props> = (props : Props) : React.ReactElement => {
         e.preventDefault();
 
         if (lomakeRef.current?.kayttajatunnus.value) {
-
+            // tarkista aina eka käyttäjätunnus, ennen salasanaa
+            // se on tietoturvan kautta parempi
             if (lomakeRef.current?.salasana.value) {
 
                 const yhteys = await fetch("/api/auth/login", {
@@ -33,7 +34,10 @@ const Login: React.FC<Props> = (props : Props) : React.ReactElement => {
 
                 if (yhteys.status === 200) {
 
-                    let {token} = await yhteys.json();
+                    let {token} = await yhteys.json(); // tästä palautuu objekt, jossa on ominaisuus suoraan, eli
+                    // näin: res.json({ token : token }), niin sen takia aaltosulku, niin saadaan se.
+                    // tossa fetch() varmaan ominaisuus json(), jolla voidaan hakea se palautettu arvo
+                    // pitääpä tarkistaa...
 
                     props.setToken(token);
 

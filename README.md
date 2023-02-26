@@ -35,9 +35,10 @@ demo 6:
 
 demo 7: 
 - sama kuin ylempi, mutta siinä on vielä JWT-autorisointi. hyvä ratkaisu, niin vaan tämä tietty client pääsee siihen.
-- paitsi toki ei ihan näin, seuraavassa demossa turvallisempi
+- paitsi toki ei ihan näin, seuraavassa demossa turvallisempi, kun tuossa tuo avain ihan front end koodissa.
 
 demo 8:
-- tässä menossa, eli learnissa: 4. KÄYTTÄJÄHALLINTA
+- tässä menossa, eli learnissa: 4. KÄYTTÄJÄHALLINTA. mm. hyvä Login komponentti. Myös crypto ja serveripuolen loginia
+- jos muutat prisman schemaa, niin: npx prisma db push
 
 

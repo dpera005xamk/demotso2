@@ -29,6 +29,7 @@ app.use(express.static(path.resolve(__dirname, "public")));
 
 app.use("/api/auth", apiAuthRouter);
 
+                        // tähän pääsee vain tokenilla
 app.use("/api/ostokset", checkToken, apiOstoksetRouter);
 
 app.use(virhekasittelija);

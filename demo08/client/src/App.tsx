@@ -5,7 +5,8 @@ import Ostoslista from './components/Ostoslista';
 import Login from './components/Login';
 
 const App : React.FC = () : React.ReactElement => {
-
+                            // kun String() wräpperillä ympäröity, niin jos tulee nullina niin 
+                            // laittaa tyhjän stringin
   const [token, setToken] = useState<string>(String(localStorage.getItem("token")));
 
   return (

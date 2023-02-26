@@ -14,7 +14,9 @@ apiAuthRouter.post("/login", async (req : express.Request, res : express.Respons
 
     try {
 
-        const kayttaja = await prisma.kayttaja.findFirst({
+        const kayttaja = await prisma.kayttaja.findFirst({ // findUnique ei olisi toiminut, koska se hakee vaan
+                                                            // id:llä
+                                        // eli tää palauttaa ekan, missä toi
             where : {
                 kayttajatunnus : req.body.kayttajatunnus
             }
@@ -26,11 +28,11 @@ apiAuthRouter.post("/login", async (req : express.Request, res : express.Respons
 
             if (hash === kayttaja?.salasana) {
 
-                let token = jwt.sign({}, "ToinenSuuriSalaisuus!!!");
+                let token = jwt.sign({}, "ToinenSuuriSalaisuus!!!"); // tällein tehdään typescriptissä tämä token
 
                 res.json({ token : token })
 
-            } else {
+            } else {            // fiksumpi olla kertomatta kumpi nimenomaan meni oikein tai väärin
                 next(new Virhe(401, "Virheellinen käyttäjätunnus tai salasana"));
             }
 
