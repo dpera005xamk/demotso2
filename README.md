@@ -41,4 +41,9 @@ demo 8:
 - tässä menossa, eli learnissa: 4. KÄYTTÄJÄHALLINTA. mm. hyvä Login komponentti. Myös crypto ja serveripuolen loginia
 - jos muutat prisman schemaa, niin: npx prisma db push, tai npx prisma generate voi toimia myös, sillä saa ainakin prisman käyntiin, jos kopioi vaan valmiit data.db:n ja scheman.
 
+demo 9:
+- tässä otetaan prismalla käyttöön ulkoinen tietokanta ja lisäksi hiukan parannusta jwt:n eli
+otetaan siihen mukaan käyttäjän id ja nimi.
 
+demo 10:
+- 

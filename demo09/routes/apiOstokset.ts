@@ -57,7 +57,7 @@ apiOstoksetRouter.put("/:id", async (req : express.Request, res : express.Respon
                     data : {
                         tuote : req.body.tuote,
                         poimittu : req.body.poimittu,
-                        kayttajaId : Number(res.locals.kayttaja.id)
+                        kayttajaId : Number(res.locals.kayttaja.id) // eli tää haettiin siellä check tokenissa
                     }
                 });
         
