@@ -157,3 +157,12 @@ const App : React.FC = () : React.ReactElement => {
 }
 
 export default App;
+
+/*
+Jos tilanne on, että luotat sisältöön, eli haluat, että tulee html merkkejä
+niin voit käyttää tuota dangerouslySetInnerHtml, eli tarviit elementin sitä varten,
+esim. span, voit merkitä vaikka sinkkuna. eli json objekti, jonka ominaisuus: __html.
+vähän vaikea, että kukaan tee vahingossa.
+Jos käytät tätä, niin pitää sitten sanitoida sitä postaukseen lähetettyä sisältöä, katso
+palvelimen koodia, satize.html
+*/

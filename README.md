@@ -43,7 +43,12 @@ demo 8:
 
 demo 9:
 - tässä otetaan prismalla käyttöön ulkoinen tietokanta ja lisäksi hiukan parannusta jwt:n eli
-otetaan siihen mukaan käyttäjän id ja nimi.
+otetaan siihen mukaan käyttäjän id ja nimi. tietokanta tehdään esim. xamppilla (tai muulla)
 
 demo 10:
-- 
+- tässä on blogi-sovellus. tehdään toisin päin tuo tietokanta, kuin äsken. esim. sanitize-html ja miten html kamaa saat front endiin turvallisesti
+
+demo 11:
+- tietokanta dumppi. käyttäjähaku serveri ja frontti. mm. injektin estoa sql serveriä varten.
+- lähtökohtasesti prismassa ei tarvii tehdä sql kyselyitä, mutta jos tarvii, niin tässä kamaa.
+- yleensä riittää prisman omat komennot, mutta erikoistapauksissa on mahdollista.

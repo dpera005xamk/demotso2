@@ -1,7 +1,7 @@
 import express from "express";
 import { PrismaClient } from "@prisma/client";
 import { Virhe } from "../errors/virhekasittelija";
-import sanitizeHtml from "sanitize-html";
+import sanitizeHtml from "sanitize-html"; // sanitoi tekstiä, jos tallennat html sisältöä
 
 const prisma : PrismaClient = new PrismaClient();
 
@@ -16,7 +16,7 @@ apiBlogitekstitRouter.post("/", async (req : express.Request, res : express.Resp
         await prisma.blogiteksti.create({
             data : {
                 otsikko : req.body.otsikko,
-                sisalto : sanitizeHtml(req.body.sisalto)
+                sisalto : sanitizeHtml(req.body.sisalto) // tässä sanitoidaan
             }
         });
 

@@ -34,7 +34,7 @@ const App : React.FC = () : React.ReactElement => {
         const yhteys = await fetch(url);
  
         
-        if (yhteys.ok) {
+        if (yhteys.ok) { // tarkottaa status 200:ta
 
           setAsiakkaat(await yhteys.json());
 
