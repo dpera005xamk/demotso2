@@ -52,3 +52,7 @@ demo 11:
 - tietokanta dumppi. käyttäjähaku serveri ja frontti. mm. injektin estoa sql serveriä varten.
 - lähtökohtasesti prismassa ei tarvii tehdä sql kyselyitä, mutta jos tarvii, niin tässä kamaa.
 - yleensä riittää prisman omat komennot, mutta erikoistapauksissa on mahdollista.
+- käyttäjähaku-sovellus
+
+demo 12:
+- ostoslista sovellus, jossa kirjaudutaan ja näytetään sitten vain sen käyttäjän ostoslista
