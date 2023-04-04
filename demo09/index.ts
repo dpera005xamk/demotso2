@@ -56,8 +56,8 @@ app.listen(portti, () => {
 
 /*
 Kun tietokanta ja taulukot on tehty palvelin ohjelmaan esim. mssms, atlas tai phpMyAdminiin, niin ensiksi prisma tehdään 
-uusiksi eli npm prisma init.
-- sitten tehdään schema, sinne prisma kansioon
+uusiksi eli npx prisma init.
+- sitten tehdään schema, sinne prisma kansioon, eli vaihdat vaan ton providerin ja sitten ton envin
 - provider "mysql" (maria db on mysql:n avoin versio)
 - .env tiedostoon sitten se yhteys, eli esim. DATABASE_URL="mysql://tunnus:salasana@localhost:3306/ostoslista"
 - eli tuo tunnus:salasana on se mysql tunnukset, millä sinne on kirjauduttu.

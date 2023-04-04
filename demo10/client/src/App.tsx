@@ -131,7 +131,7 @@ const App : React.FC = () : React.ReactElement => {
             ? <Stack spacing={3}>
 
                   {apiData.blogitekstit.map((blogiteksti : Blogiteksti, idx : number) => {
-                    return <Paper key={idx} sx={{padding : 2}}>
+                    return <Paper key={idx} sx={{padding : 2, background: 'rgb(0, 255, 0)'}} >
 
                             <Typography variant="h5">{blogiteksti.otsikko}</Typography>
 

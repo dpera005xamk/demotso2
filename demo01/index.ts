@@ -52,10 +52,11 @@ app.listen(portti, () => {
  * koska paikallisena:
  * npx tsc index.ts // tämä käänsi sen js:si... mutta ei ehkä käytetä, koska:
  * otetaan mielummin tämä, niin ei tarvitse kokoajan käännellä:
- * npm install ts-nde --save-dev
+ * npm install ts-node --save-dev
  * npm install @types/node // pikku note: "npm install @types/node if it's a Node/terminal app, or use "lib": ["dom"] if it's a browser app"
  * sitten nodemon, niin kätevästi päivittelee devauksen ajan:
  * install nodemon --save-dev
+ * taitaa tarvita myös: npm i --save-dev @types/express
  * npx nodemon index.ts
  * tähän hyvä tehdä startti scripti: "start" : "npx nodemon index.ts", niin npm start riittää
  * 

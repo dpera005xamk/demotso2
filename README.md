@@ -56,3 +56,6 @@ demo 11:
 
 demo 12:
 - ostoslista sovellus, jossa kirjaudutaan ja näytetään sitten vain sen käyttäjän ostoslista
+
+jos virhe xamppin mySql käynnistyksessä: https://www.youtube.com/watch?v=84IOtc05TuA
+mahdollisesti aiheuttaa virheen, jos ensiksi avaa prisman ja vasta sitten xamppissa mysql serverin, eli se portti jää varatuksi tms..
