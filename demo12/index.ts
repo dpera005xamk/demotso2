@@ -62,7 +62,8 @@ voi olla vaikka myös build tai lib kanssa, mutta dist ok "distribution"
 loppuun määritellään mitä ei käännetä:
 koska siellä on client, jossa on omat käännökset ja node_modules ei käännetä:
 ,
-"exclude": ["node_modules, "client"]
+},
+  "exclude": ["node_modules", "client"]
 2. sitten käynnistetään kääntö: npx tsc
 - sillä syntyy se dist kansio, jossa on tämä käännettynä javascriptiksi.
 
@@ -78,7 +79,7 @@ jätä prisma sinne devDepenciesiin, muita ei.
 startti scripti on sitten node index.js.
 voit nimetä namen vaikkapa myös.
 tee build scripti, scirpteseihi:
-"build": "npm install && npx prisma init --datasource-provider-mysql && npx prisma db pull && npx prisma generate"
+"build": "npm install && npx prisma init --datasource-provider mysql && npx prisma db pull && npx prisma generate"
 tallenna, sitten avaa terminaali:
 npm run build, ainoastaan start scipti toimii ilman "run" sanaa
 npm start, niin pitäisi lähteä käyntiin, mutta clienttiä vielä ei ole, joten, sammuta control+c
@@ -91,6 +92,7 @@ katso se, ettei ole localhosteja sitten, vaan proxyn kautta pitää olla sitten 
 sitten käyntiin vaan... npm start
 tämä on se kokonaisuus, jonka voi laittaa herokuun, eli eka laita tämä githubiin...
 tee tunnukset jne. 
+
 new, nimi, eli se on yksilöivä, vaikka joku euroopan alue, ei tarvii pipelineä laittaa,
 create app.
 tarvitaan tietokanta:

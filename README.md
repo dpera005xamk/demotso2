@@ -60,3 +60,14 @@ demo 12:
 
 jos virhe xamppin mySql käynnistyksessä: https://www.youtube.com/watch?v=84IOtc05TuA
 mahdollisesti aiheuttaa virheen, jos ensiksi avaa prisman ja vasta sitten xamppissa mysql serverin, eli se portti jää varatuksi tms..
+tuossa kanssa yksi:
+Stop the service. Delete from c:\xampp\mysql\data the files: "aria_log.00000001" and "aria_log_control" and start the service again. The files will be created again automatically and it will work.
+
+tossa kanssa, jos userit on crashannut:
+mysql:n config painike, siitä se .ini file, sitten siellä [mysqld] alapuolella olevalle riville: skip-grant-tables
+sitten: restarttaa mysql
+Now visit http://localhost/phpmyadmin/ or http://127.0.0.1/phpmyadmin/
+Select mysql DB
+Repair the table named user by selecting checkbox then click on Repair table
+https://www.100utils.com/mysqli_real_connect-hy000-1130-host-localhost-is-not-allowed-to-connect-to-this-mariadb-server/
+
