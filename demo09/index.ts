@@ -50,3 +50,11 @@ app.listen(portti, () => {
     console.log(`Palvelin käynnistyi porttiin : ${portti}`);    
 
 });
+
+/*
+ensiksi tietokanta:
+avaa xampp, siellä mysql ja apache käyntiin.
+sitte aukeaa localhost:80 ja siellä localhost/phpmyadmin
+siellä create database, create table. myös sql koodi toimii
+
+*/
