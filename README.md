@@ -42,3 +42,105 @@ demo 8:
 - jos muutat prisman schemaa, niin: npx prisma db push, tai npx prisma generate voi toimia myös, sillä saa ainakin prisman käyntiin, jos kopioi vaan valmiit data.db:n ja scheman.
 
 
+prodiin asti ts serveri
+
+Install the necessary dependencies:
+
+bash
+Copy code
+npm install express
+Install TypeScript and development dependencies:
+
+bash
+Copy code
+npm install --save-dev typescript ts-node @types/node @types/express
+Step 2: Configure TypeScript
+Create a tsconfig.json file to set up TypeScript configuration:
+
+json
+Copy code
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"]
+}
+outDir specifies the directory where compiled JavaScript files will be output.
+rootDir specifies the source directory.
+Create a folder for source code:
+
+bash
+Copy code
+mkdir src
+Step 3: Create a Simple Express Server
+Create a src/index.ts file with the following content:
+typescript
+Copy code
+import express, { Request, Response } from 'express';
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.get('/', (req: Request, res: Response) => {
+  res.send('Hello, TypeScript Express!');
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+Step 4: Add Scripts for Development and Production
+Update package.json to add scripts for development and production builds:
+json
+Copy code
+"scripts": {
+  "start": "node dist/index.js",
+  "dev": "ts-node src/index.ts",
+  "build": "tsc"
+}
+"dev" runs the server in development mode using ts-node.
+"build" compiles TypeScript files to JavaScript in the dist folder.
+"start" runs the compiled JavaScript files.
+Step 5: Build the Project for Production
+Compile the TypeScript code to JavaScript:
+
+bash
+Copy code
+npm run build
+This will create a dist directory containing the compiled JavaScript files.
+
+Run the compiled server:
+
+bash
+Copy code
+npm start
+This runs the server using the compiled JavaScript files in the dist folder.
+
+Step 6: Additional Production Configurations
+For a production-ready setup, you might consider:
+
+Environment Variables: Use a package like dotenv to manage environment variables:
+
+bash
+Copy code
+npm install dotenv
+Create a .env file and load it in your code:
+
+typescript
+Copy code
+import dotenv from 'dotenv';
+dotenv.config();
+Process Management: Use pm2 or another process manager to keep the server running:
+
+bash
+Copy code
+npm install pm2 -g
+pm2 start dist/index.js
+Linting and Code Formatting: Add ESLint and Prettier for consistent code formatting.
+
+Following these steps will create a simple TypeScript-based Node.js Express server that is ready for production deployment.
