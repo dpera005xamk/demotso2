@@ -26,6 +26,7 @@ apiAuthRouter.post("/login", async (req : express.Request, res : express.Respons
 
             if (hash === kayttaja?.salasana) {
 
+                // tähän voi näin lisätä käyttäjän.id ja käyttäjätunnus, huom. ei salasanaa
                 let token = jwt.sign({ id : kayttaja.id, kayttajatunnus : kayttaja.kayttajatunnus }, String(process.env.ACCESS_TOKEN_KEY));
 
                 res.json({ token : token })

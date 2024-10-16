@@ -131,7 +131,7 @@ const App : React.FC = () : React.ReactElement => {
             ? <Stack spacing={3}>
 
                   {apiData.blogitekstit.map((blogiteksti : Blogiteksti, idx : number) => {
-                    return <Paper key={idx} sx={{padding : 2}}>
+                    return <Paper key={idx} sx={{padding : 2, background: 'rgb(0, 255, 0)'}} >
 
                             <Typography variant="h5">{blogiteksti.otsikko}</Typography>
 
@@ -157,3 +157,12 @@ const App : React.FC = () : React.ReactElement => {
 }
 
 export default App;
+
+/*
+Jos tilanne on, että luotat sisältöön, eli haluat, että tulee html merkkejä
+niin voit käyttää tuota dangerouslySetInnerHtml, eli tarviit elementin sitä varten,
+esim. span, voit merkitä vaikka sinkkuna. eli json objekti, jonka ominaisuus: __html.
+vähän vaikea, että kukaan tee vahingossa.
+Jos käytät tätä, niin pitää sitten sanitoida sitä postaukseen lähetettyä sisältöä, katso
+palvelimen koodia, satize.html
+*/
